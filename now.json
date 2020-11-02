@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {"src": "dist/apps/api/main.js", "use": "@now/node"},
+    {"src": "dist/apps/hue/*.html", "use": "@now/static"},
+    {"src": "dist/apps/hue/*.js", "use": "@now/static"}
+  ],
+  "routes": [
+    {"src": "/api/(.*)", "dest": "dist/apps/api/main.js"},
+    {"src": "/(assets/.+|.+\\.css|.+\\.js)", "dest": "dist/apps/hue/$1"},
+    {"src": "/(.*).html", "dest": "dist/apps/hue/$1.html"},
+    {"src": "/(.*).json", "dest": "dist/apps/hue/$1.json"},
+    {"src": "/(.*)", "dest": "dist/apps/hue/index.html"}
+  ]
+}
