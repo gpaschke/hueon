@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "nx": "nx",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -20,12 +17,13 @@
     "affected:dep-graph": "nx affected:dep-graph",
     "affected": "nx affected",
     "format": "nx format:write",
-    "format:write": "nx format:write",
-    "format:check": "nx format:check",
     "update": "ng update @nrwl/workspace",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "ng": "nx",
+    "nx": "nx",
+    "help": "nx help",
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -42,7 +40,7 @@
     "@nestjs/platform-express": "^7.0.0",
     "@nrwl/angular": "10.3.1",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "~6.5.5",
+    "rxjs": "~6.6.3",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
