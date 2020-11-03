@@ -21,7 +21,7 @@
             "polyfills": "apps/hue/src/polyfills.ts",
             "tsConfig": "apps/hue/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/hue/src/favicon.ico", "apps/hue/src/assets"],
+            "assets": ["apps/hue/src/favicon.ico", "apps/hue/src/assets", "apps/hue/src/manifest.webmanifest"],
             "styles": ["apps/hue/src/styles.scss"],
             "scripts": []
           },
@@ -52,7 +52,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/hue/ngsw-config.json"
             }
           }
         },
