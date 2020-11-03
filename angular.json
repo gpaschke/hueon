@@ -192,6 +192,25 @@
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "compodoc": {
+          "builder": "@twittwer/compodoc:compodoc",
+          "options": {
+            "tsConfig": "apps/api/tsconfig.app.json",
+            "outputPath": "dist/compodoc/api",
+            "workspaceDocs": true
+          },
+          "configurations": {
+            "json": {
+              "exportFormat": "json"
+            },
+            "serve": {
+              "serve": true,
+              "silent": false,
+              "port": 8081,
+              "watch": true
+            }
+          }
         }
       }
     },

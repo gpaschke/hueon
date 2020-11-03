@@ -26,6 +26,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "compodoc:serve": "nx run hue:compodoc -c serve",
+    "compodoc:build": "nx run-many --target=compodoc --projects=hue,api",
     "ng": "nx",
     "nx": "nx",
     "help": "nx help",
