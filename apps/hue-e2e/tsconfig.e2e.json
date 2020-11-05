@@ -6,5 +6,10 @@
     "allowJs": true,
     "types": ["cypress", "node"]
   },
-  "include": ["src/**/*.ts", "src/**/*.js"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "../../node_modules/@shelex/cypress-allure-plugin/reporter",
+    "../../node_modules/cypress"
+  ]
 }

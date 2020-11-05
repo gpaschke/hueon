@@ -8,5 +8,10 @@
   "video": true,
   "videosFolder": "../../dist/cypress/apps/hue-e2e/videos",
   "screenshotsFolder": "../../dist/cypress/apps/hue-e2e/screenshots",
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "env": {
+    "allure": true,
+    "allureResultsPath": "../../dist/cypress/apps/hue-e2e/report",
+    "issuePrefix": "https://jira.domain.de/browse/"
+  }
 }

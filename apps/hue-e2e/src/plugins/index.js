@@ -12,6 +12,7 @@
 // the project's config changing)
 
 const { preprocessTypescript } = require('@nrwl/cypress/plugins/preprocessor');
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
@@ -20,3 +21,8 @@ module.exports = (on, config) => {
   // Preprocess Typescript file using Nx helper
   on('file:preprocessor', preprocessTypescript(config));
 };
+
+module.exports = (on, config) => {
+  // Generate allure test reports
+  allureWriter(on, config);
+}
