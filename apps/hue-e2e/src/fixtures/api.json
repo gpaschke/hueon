@@ -1,0 +1,8 @@
+{
+  "GET": {},
+  "POST": {
+    "login": "/v1/login"
+  },
+  "PUT": {},
+  "DELETE": {}
+}

@@ -11,18 +11,28 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const { preprocessTypescript } = require('@nrwl/cypress/plugins/preprocessor');
+const { getWebpackConfig } = require('@nrwl/cypress/plugins/preprocessor');
+const preprocessor = require('@cypress/webpack-preprocessor');
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  // Process Cucumber (.feature) files
+  const wpConfig = getWebpackConfig(config);
+  wpConfig.node = {fs: 'empty', child_process: 'empty', readline: 'empty'};
+  wpConfig.module.rules.push({
+    test: /\.feature$/,
+    loader: 'cypress-cucumber-preprocessor/loader',
+    exclude: [ /node_modules/ ],
+    options: {
+      configFile: 'tsconfig.e2e.json',
+      experimentalWatchApi: true,
+      transpileOnly: true
+    }
+  });
 
-  // Preprocess Typescript file using Nx helper
-  on('file:preprocessor', preprocessTypescript(config));
-};
+  // Preprocess Typescript files
+  on('file:preprocessor', preprocessor({webpackOptions: wpConfig}));
 
-module.exports = (on, config) => {
   // Generate allure test reports
   allureWriter(on, config);
-}
+};

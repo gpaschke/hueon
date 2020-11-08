@@ -60,6 +60,7 @@
     "@angular/compiler-cli": "^10.1.0",
     "@angular/language-service": "^10.1.0",
     "@compodoc/compodoc": "^1.1.11",
+    "@cypress/webpack-preprocessor": "^5.4.10",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/swagger": "^4.6.1",
     "@nestjs/testing": "^7.0.0",
@@ -76,6 +77,7 @@
     "allure-commandline": "^2.13.0",
     "codelyzer": "~5.0.1",
     "cypress": "^4.1.0",
+    "cypress-cucumber-preprocessor": "^4.0.0",
     "dotenv": "6.2.0",
     "eslint": "7.10.0",
     "jest": "26.2.2",
@@ -87,5 +89,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
     "typescript": "~4.0.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "./src/integration"
   }
 }
