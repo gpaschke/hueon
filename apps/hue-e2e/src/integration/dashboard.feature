@@ -25,4 +25,5 @@ Feature: Dashboard
   If something went wrong
 
     When  I do something specific
+    Then  snapshot is identical
 

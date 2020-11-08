@@ -86,3 +86,16 @@ Then(`the {string} checkbox is selected`, (element) => {
 Then(`the {string} button is active`, (element) => {
   cy.get(selectors[element]).should('not.be.disabled');
 });
+
+Then(`snapshot is identical`, () => {
+  // @ts-ignore
+  cy.matchImageSnapshot();
+});
+
+Then(`snapshot is {string} identical`, (correctness) => {
+  // @ts-ignore
+  cy.matchImageSnapshot({
+    failureThreshold: 1 - +correctness / 100,
+    failureThresholdType: 'percent',
+  });
+});

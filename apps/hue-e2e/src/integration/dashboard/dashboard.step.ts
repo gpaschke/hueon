@@ -3,10 +3,6 @@ import { getGreeting } from '../../support/app.po';
 
 When(`I do something specific`, () => {
   // cy.anything specific can be done here
-
-  // If you need some cy functions on multiple steps you can use custom commands/helper:
-  // see `../support/commands.ts` file
-  cy.login('my-email@something.com', 'myPassword');
 });
 
 Then(`I see something specific`, () => {
